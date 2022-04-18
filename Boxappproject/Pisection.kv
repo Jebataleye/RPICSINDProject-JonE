@@ -60,170 +60,119 @@
             pos: 0,0
             size:self.size
     
-    TabbedPanel:
-        background_color: (255/255, 221/255, 210/255,1)    # 50% translucent blue
-        border: [0, 0, 0, 0]
-        background_image: 'path/to/background/image'
-        padding: 25
-        size_hint: 1,1
-        pos_hint: {'center_x': 1, 'center_y': .523}
-        do_default_tab: False
-        
+    BoxLayout:
+        FloatLayout:
+                    
+            Label:
+                id: "tleft"
+                size: 175,125
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 55/255, 61/255, 66/255
+                    Rectangle:
+                        pos: 35,475
+                        size: 250,150
+            Label:
+                id: "tright"
+                size: 175,125
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 55/255, 61/255, 66/255
+                    Rectangle:
+                        pos: 625,475
+                        size: 250,150
 
-        TabbedPanelItem:
-            text: 'HotKeys2'
+            Label:
+                id: "bleft"
+                size: 175,125
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 237/255, 246/255, 249/255
+                    Rectangle:
+                        pos: 35,25
+                        size: 250,150
+            Label:
+                id: "bright"
+                size: 175,125
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 55/255, 61/255, 66/255
+                    Rectangle:
+                        pos: 625,25
+                        size: 250,150
+            Label:
+                id: "center"
+                size: 300,200
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 55/255, 61/255, 66/255
+                    Rectangle:
+                        pos: 280,225
+                        size: 350,200
+            Label:
+                id: ball
+                pos: 0,0
+                canvas:
+                    Color:
+                        rgba: 94/255, 134/255, 166/255,0
+                    Ellipse:
+                        pos: self.pos
+                        size: 100,100
             
-            BoxLayout:
-                minimun_size:1000,1000
-                padding:50
-                spacing:30
-                Button:
-                    id: jon
-                    text: "hey"
-                    on_release: app.change()
-                Button:
-                Button:
-        TabbedPanelItem:
-            text: "scatter"
-            BoxLayout:
-                FloatLayout:
-                    
-                    Label:
-                        id: "tleft"
-                        size: 175,125
-                        pos: 150,200
-                        canvas:
-                            Color:
-                                rgb: 55/255, 61/255, 66/255
-                            Rectangle:
-                                pos: 35,475
-                                size: 250,150
-                    Label:
-                        id: "tright"
-                        size: 175,125
-                        pos: 150,200
-                        canvas:
-                            Color:
-                                rgb: 55/255, 61/255, 66/255
-                            Rectangle:
-                                pos: 625,475
-                                size: 250,150
-                    Label:
-                        id: "bleft"
-                        size: 175,125
-                        pos: 150,200
-                        canvas:
-                            Color:
-                                rgb: 237/255, 246/255, 249/255
-                            Rectangle:
-                                pos: 35,25
-                                size: 250,150
-                    Label:
-                        id: "bright"
-                        size: 175,125
-                        pos: 150,200
-                        canvas:
-                            Color:
-                                rgb: 55/255, 61/255, 66/255
-                            Rectangle:
-                                pos: 625,25
-                                size: 250,150
-                    Label:
-                        id: "center"
-                        size: 300,200
-                        pos: 150,200
-                        canvas:
-                            Color:
-                                rgb: 55/255, 61/255, 66/255
-                            Rectangle:
-                                pos: 280,225
-                                size: 350,200
-                    Label:
-                        id: ball
-                        pos: 0,0
-                        canvas:
-                            Color:
-                                rgba: 94/255, 134/255, 166/255,0
-                            Ellipse:
-                                pos: self.pos
-                                size: 100,100
-                    
-                    
-                    Scatter:
-                        id: "wid1"
-                        on_touch_up: app.functest(self,"wid1")
-                        on_size: self.center = win.Window.center
-                        width: texts.size[0]
-                        height: texts.size[1]-60
-                        size_hint: None, None
-                        pos: 500,500
-                        center_y: 200
-                         
-                        canvas:
-                            Color:
-                                rgba: (130, 176, 174,1)
-                            Rectangle:
-                                
-                                size: self.size
-                                pos: 0,0
-                        Label:
-                            id: textsb
-                        Label:
-                            id: texts
-                            pos: textsb.pos[0],textsb.pos[1]-30
-                            text: "1"
-                            color: 255,255,255
-                            center_y: self.center_y
+            
+            Scatter:
+                id: "wid1"
+                on_touch_up: app.functest(self,"wid1")
+                on_size: self.center = win.Window.center
+                width: texts.size[0]
+                height: texts.size[1]-60
+                size_hint: None, None
+                pos: 500,500
+                center_y: 200
+                 
+                canvas:
+                    Color:
+                        rgba: (130, 176, 174,1)
+                    Rectangle:
                         
-                    Scatter:
-                        id: "wid2"
-                        on_touch_up: app.functest(self,"wid2")
-                        on_size: self.center = win.Window.center
-                        width: texts.size[0]
-                        height: texts.size[1]-60
-                        size_hint: None, None
-                        pos: 100,100
-                        center_y: 200
-                         
-                        canvas:
-                            Color:
-                                rgba: (130, 176, 174,1)
-                            Rectangle:
-                                
-                                size: self.size
-                                pos: 0,0
-                        Label:
-                            id: textsb
-                        Label:
-                            id: texts
-                            pos: textsb.pos[0],textsb.pos[1]-30
-                            text: "2"
-                            color: 255,255,255
-                            center_y: self.center_y
-        TPI:
-            tab_width: 60        
-        TabbedPanelItem:
-            text: 'tab2'
-            BoxLayout:
-                TabbedPanelItem:
-                    text: "test"
+                        size: self.size
+                        pos: 0,0
                 Label:
-                    text: 'Second tab content area'
-                Button:
-                    text: 'Button that does nothing'
-        TabbedPanelItem:
-            text: 'Layout'
-            BoxLayout:
-                DragLabel:
-                    canvas:
-                        Color:
-                            rgba: (130, 176, 174,.2)
-                        Rectangle:
-                            pos: self.pos[0]+230,self.pos[1]+10
-                            size: 100,30 
-                    id: draga
-                    size_hint: 0.25, 0.2
-                    text: 'Drag me' 
-                    pos: 100,50
-            
+                    id: textsb
+                Label:
+                    id: texts
+                    pos: textsb.pos[0],textsb.pos[1]-30
+                    text: "1"
+                    color: 255,255,255
+                    center_y: self.center_y
                 
+            Scatter:
+                id: "wid2"
+                on_touch_up: app.functest(self,"wid2")
+                on_size: self.center = win.Window.center
+                width: texts.size[0]
+                height: texts.size[1]-60
+                size_hint: None, None
+                pos: 100,100
+                center_y: 200
+                 
+                canvas:
+                    Color:
+                        rgba: (130, 176, 174,1)
+                    Rectangle:
+                        
+                        size: self.size
+                        pos: 0,0
+                Label:
+                    id: textsb
+                Label:
+                    id: texts
+                    pos: textsb.pos[0],textsb.pos[1]-30
+                    text: "2"
+                    color: 255,255,255
+                    center_y: self.center_y
