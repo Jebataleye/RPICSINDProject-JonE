@@ -20,8 +20,8 @@ print ("socket binded to %s" %(port))
 # put the socket into listening mode
 s.listen(5)    
 print ("socket is listening")
-conn = True
-if conn == False: 
+conn = False
+if conn == True: 
     c, addr = s.accept()
     print("past")   
     print ('Got connection from', addr)
@@ -44,11 +44,9 @@ from kivy.properties import ObjectProperty
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-Window.size = (900, 800)
+Window.size = (800, 480)
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
-Config.set('graphics', 'width', '200')
-Config.set('graphics', 'height', '200')
-
+Config.set('graphics', 'resizable', False)
 class Picture(Scatter): 
     t = ObjectProperty(None)
     pass
