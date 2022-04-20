@@ -46,6 +46,8 @@ from kivy.clock import Clock
 
 Window.size = (800, 480)
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
+Config.set('graphics', 'width', '200')
+Config.set('graphics', 'height', '200')
 Config.set('graphics', 'resizable', False)
 class Picture(Scatter): 
     t = ObjectProperty(None)
