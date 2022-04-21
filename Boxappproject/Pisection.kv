@@ -71,8 +71,8 @@
                     Color:
                         rgb: 55/255, 61/255, 66/255
                     Rectangle:
-                        pos: 35,475
-                        size: 250,150
+                        pos: 10,470-120
+                        size: 250,120
             Label:
                 id: "tright"
                 size: 175,125
@@ -81,8 +81,8 @@
                     Color:
                         rgb: 55/255, 61/255, 66/255
                     Rectangle:
-                        pos: 625,475
-                        size: 250,150
+                        pos: 790-259,470-120
+                        size: 250,120
 
             Label:
                 id: "bleft"
@@ -93,17 +93,17 @@
                         rgb: 237/255, 246/255, 249/255
                     Rectangle:
                         pos: 10,10
-                        size: 250,150
+                        size: 250,120
             Label:
                 id: "bright"
                 size: 175,125
-                pos: 150,200
+                pos: 790-125,10
                 canvas:
                     Color:
                         rgb: 55/255, 61/255, 66/255
                     Rectangle:
-                        pos: 625,25
-                        size: 250,150
+                        pos: 790-250,10
+                        size: 250,120
             Label:
                 id: "center"
                 size: 350,200
@@ -125,54 +125,3 @@
                         size: 100,100
             
             
-            Scatter:
-                id: "wid1"
-                on_touch_up: app.functest(self,"wid1")
-                on_size: self.center = win.Window.center
-                width: texts.size[0]
-                height: texts.size[1]-60
-                size_hint: None, None
-                pos: 500,500
-                center_y: 200
-                 
-                canvas:
-                    Color:
-                        rgba: (130, 176, 174,1)
-                    Rectangle:
-                        
-                        size: self.size
-                        pos: 0,0
-                Label:
-                    id: textsb
-                Label:
-                    id: texts
-                    pos: textsb.pos[0],textsb.pos[1]-30
-                    text: "1"
-                    color: 255,255,255
-                    center_y: self.center_y
-                
-            Scatter:
-                id: "wid2"
-                on_touch_up: app.functest(self,"wid2")
-                on_size: self.center = win.Window.center
-                width: texts.size[0]
-                height: texts.size[1]-60
-                size_hint: None, None
-                pos: 100,100
-                center_y: 200
-                 
-                canvas:
-                    Color:
-                        rgba: (130, 176, 174,1)
-                    Rectangle:
-                        
-                        size: self.size
-                        pos: 0,0
-                Label:
-                    id: textsb
-                Label:
-                    id: texts
-                    pos: textsb.pos[0],textsb.pos[1]-30
-                    text: "2"
-                    color: 255,255,255
-                    center_y: self.center_y
