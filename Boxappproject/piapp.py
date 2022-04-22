@@ -45,6 +45,7 @@ from kivy.core.window import Window
 from kivy.clock import Clock
 
 Window.size = (800, 480)
+Window.borderless = True
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 Config.set('graphics', 'width', '200')
 Config.set('graphics', 'height', '200')
