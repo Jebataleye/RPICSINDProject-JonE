@@ -20,7 +20,7 @@ print ("socket binded to %s" %(port))
 # put the socket into listening mode
 s.listen(5)    
 print ("socket is listening")
-conn = False
+conn = True
 if conn == True: 
     c, addr = s.accept()
     print("past")   
@@ -64,12 +64,7 @@ count = 0
 ballvel = [1,1]
 class TabbedPanelApp(App):
     def ball_move(self, dt):
-        if conn == True:
-            try:
-                c.send("heya".encode())
-            except:
-                if conn == True:
-                    print("connection failed")
+    
 
         ball = self.root.ids.ball
         if ball.pos[0]>800 or ball.pos[0] == 800 or ball.pos[0] < 0:
@@ -104,15 +99,23 @@ class TabbedPanelApp(App):
         if widx > tleft.pos[0]-99 and widx < tleft.pos[0]+250:
             if widy > tleft.pos[1]-39 and widy < tleft.pos[1]+150:
                 print("collided tleft")
+                if conn == True:
+                    c.send(("1-"+name).encode())
         if widx > tright.pos[0]-99 and widx < tright.pos[0]+250:
             if widy > tright.pos[1]-39 and widy < tright.pos[1]+150:
                 print("collided tright")
+                if conn == True:
+                    c.send(("2-"+name).encode())
         if widx > bright.pos[0]-99 and widx < bright.pos[0]+250:
             if widy > bright.pos[1]-39 and widy < bright.pos[1]+150:
                 print("collided bright")
+                if conn == True:
+                    c.send(("4-"+name).encode())
         if widx > bleft.pos[0]-99 and widx < bleft.pos[0]+250:
             if widy > bleft.pos[1]-39 and widy < bleft.pos[1]+150:
                 print("collided bleft")
+                if conn == True:
+                    c.send(("3-"+name).encode())
     def change(self):
         but1 = self.root.ids.jon.text
         print(but1)

@@ -14,20 +14,15 @@ port = 12345
 # instead we have inputted an empty string
 # this makes the server listen to requests
 # coming from other computers on the network
-s.bind(('', port))        
-print ("socket binded to %s" %(port))
- 
-# put the socket into listening mode
-s.listen(5)    
-print ("socket is listening")
-conn = False
+
+conn = True
 if conn == True: 
-    c, addr = s.accept()
-    print("past")   
-    print ('Got connection from', addr)
-    # send a thank you message to the client. encoding to send byte type.
-    c.send('Thank you for connecting'.encode())
-    print(c.recv(1024).decode())
+    s.connect(('127.0.0.1', port))
+
+    message = input("Enter a message: ")
+    s.send(message.encode())
+    # receive data from the server and decoding to get the string.
+# close the connection
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.tabbedpanel import TabbedPanel
@@ -65,12 +60,12 @@ count = 0
 ballvel = [1,1]
 class Pisection(App):
     def ball_move(self, dt):
-        if conn == True:
-            try:
-                c.send("heya".encode())
-            except:
-                if conn == True:
-                    print("connection failed")
+        if conn==True:
+            message = s.recv(1024).decode()
+            print (message)
+            if message.split("-")[0] == 1:
+                self.root.ids.tleft.text = message.split("-")[1]
+                
 
         ball = self.root.ids.ball
         if ball.pos[0]>800 or ball.pos[0] == 800 or ball.pos[0] < 0:
