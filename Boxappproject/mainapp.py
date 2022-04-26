@@ -20,7 +20,7 @@ print ("socket binded to %s" %(port))
 # put the socket into listening mode
 s.listen(5)    
 print ("socket is listening")
-conn = True
+conn = False
 if conn == True: 
     c, addr = s.accept()
     print("past")   
@@ -85,6 +85,8 @@ class TabbedPanelApp(App):
         print("-"*10)
         print(name)
         
+        kivids = self.root.ids
+        wids = [[kivids.wid1,[50,100]],[kivids.wid2,[175,100]]]
         count+=1
         widx,widy = wid.pos
         print(widx,widy)
@@ -92,9 +94,8 @@ class TabbedPanelApp(App):
         tright = self.root.ids.tright
         bleft = self.root.ids.bleft
         bright = self.root.ids.bright
+        center = self.root.ids.center
         #if widx > 
-        print(tleft.pos[0]-70,tleft.pos[0]+250)
-        print(tleft.pos[1]-30,tleft.pos[1]+150)
 
         if widx > tleft.pos[0]-99 and widx < tleft.pos[0]+250:
             if widy > tleft.pos[1]-39 and widy < tleft.pos[1]+150:
@@ -106,6 +107,11 @@ class TabbedPanelApp(App):
                 print("collided tright")
                 if conn == True:
                     c.send(("2-"+name).encode())
+        if widx > center.pos[0]-99 and widx < center.pos[0]+350:
+            if widy > center.pos[1]-39 and widy < center.pos[1]+200:
+                print("collided center")
+                if conn == True:
+                    c.send(("0-"+name).encode())            
         if widx > bright.pos[0]-99 and widx < bright.pos[0]+250:
             if widy > bright.pos[1]-39 and widy < bright.pos[1]+150:
                 print("collided bright")
@@ -116,6 +122,8 @@ class TabbedPanelApp(App):
                 print("collided bleft")
                 if conn == True:
                     c.send(("3-"+name).encode())
+        for wid in wids:
+            wid[0].pos = wid[1]
     def change(self):
         but1 = self.root.ids.jon.text
         print(but1)

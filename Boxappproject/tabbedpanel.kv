@@ -94,7 +94,7 @@
                         pos: 50,575
                         canvas:
                             Color:
-                                rgb: 55/255, 61/255, 66/255
+                                rgba: 55/255, 61/255, 66/255,.7
                             Rectangle:
                                 pos: 50,575
                                 size: 250,150
@@ -104,7 +104,7 @@
                         pos: 605,575
                         canvas:
                             Color:
-                                rgb: 55/255, 61/255, 66/255
+                                rgba: 55/255, 61/255, 66/255,.7
                             Rectangle:
                                 pos: 605,575
                                 size: 250,150
@@ -114,7 +114,7 @@
                         pos: 50,175
                         canvas:
                             Color:
-                                rgb: 55/255, 61/255, 66/255
+                                rgba: 55/255, 61/255, 66/255,.7
                             Rectangle:
                                 pos: 50,175
                                 size: 250,150
@@ -124,17 +124,17 @@
                         pos: 605,175
                         canvas:
                             Color:
-                                rgb: 55/255, 61/255, 66/255
+                                rgba: 55/255, 61/255, 66/255,.7
                             Rectangle:
                                 pos: 605,175
                                 size: 250,150
                     Label:
                         id: center
                         size: 300,200
-                        pos: 150,200
+                        pos: 280,350
                         canvas:
                             Color:
-                                rgb: 55/255, 61/255, 66/255
+                                rgba: 55/255, 61/255, 66/255,.7
                             Rectangle:
                                 pos: 280,350
                                 size: 350,200
@@ -156,8 +156,8 @@
                         width: texts.size[0]
                         height: texts.size[1]-60
                         size_hint: None, None
-                        pos: 500,500
-                        center_y: 200
+                        pos: 50,100
+                        
                          
                         canvas:
                             Color:
@@ -174,7 +174,16 @@
                             text: "1"
                             color: 255,255,255
                             center_y: self.center_y
-                        
+                    Label:
+                        id: bar
+                        center_y: 132.5
+                        canvas:
+                            Color:
+                                rgb: 226/255, 149/255, 120/255
+                            Rectangle:
+                                pos: 0,147.5
+                                size:900, 20
+
                     Scatter:
                         id: wid2
                         on_touch_up: app.functest(self,"wid2")
@@ -182,8 +191,8 @@
                         width: texts.size[0]
                         height: texts.size[1]-60
                         size_hint: None, None
-                        pos: 100,100
-                        center_y: 200
+                        pos: 175,100
+                        
                          
                         canvas:
                             Color:
