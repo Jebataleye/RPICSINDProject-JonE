@@ -70,19 +70,7 @@
         do_default_tab: False
         
 
-        TabbedPanelItem:
-            text: 'HotKeys'
-            
-            BoxLayout:
-                minimun_size:1000,1000
-                padding:50
-                spacing:30
-                Button:
-                    id: jon
-                    text: "hey"
-                    on_release: app.change()
-                Button:
-                Button:
+        
         TabbedPanelItem:
             text: "scatter"
             BoxLayout:
@@ -150,43 +138,8 @@
                     
                     
                     Scatter:
-                        id: wid1
-                        on_touch_up: app.functest(self,"wid1")
-                        on_size: self.center = win.Window.center
-                        width: texts.size[0]
-                        height: texts.size[1]-60
-                        size_hint: None, None
-                        pos: 50,100
-                        
-                         
-                        canvas:
-                            Color:
-                                rgba: (130, 176, 174,1)
-                            Rectangle:
-                                
-                                size: self.size
-                                pos: 0,0
-                        Label:
-                            id: textsb
-                        Label:
-                            id: texts
-                            pos: textsb.pos[0],textsb.pos[1]-30
-                            text: "1"
-                            color: 255,255,255
-                            center_y: self.center_y
-                    Label:
-                        id: bar
-                        center_y: 132.5
-                        canvas:
-                            Color:
-                                rgb: 226/255, 149/255, 120/255
-                            Rectangle:
-                                pos: 0,147.5
-                                size:900, 20
-
-                    Scatter:
-                        id: wid2
-                        on_touch_up: app.functest(self,"wid2")
+                        id: Song
+                        on_touch_up: app.functest(self,"Current Song")
                         on_size: self.center = win.Window.center
                         width: texts.size[0]
                         height: texts.size[1]-60
@@ -206,7 +159,42 @@
                         Label:
                             id: texts
                             pos: textsb.pos[0],textsb.pos[1]-30
-                            text: "2"
+                            text: "Current Song"
+                            color: 255,255,255
+                            center_y: self.center_y
+                    Label:
+                        id: bar
+                        center_y: 132.5
+                        canvas:
+                            Color:
+                                rgb: 226/255, 149/255, 120/255
+                            Rectangle:
+                                pos: 0,147.5
+                                size:900, 20
+
+                    Scatter:
+                        id: Time
+                        on_touch_up: app.functest(self,"Time/Date")
+                        on_size: self.center = win.Window.center
+                        width: texts.size[0]
+                        height: texts.size[1]-60
+                        size_hint: None, None
+                        pos: 50,100
+                        
+                         
+                        canvas:
+                            Color:
+                                rgba: (130, 176, 174,1)
+                            Rectangle:
+                                
+                                size: self.size
+                                pos: 0,0
+                        Label:
+                            id: textsb
+                        Label:
+                            id: texts
+                            pos: textsb.pos[0],textsb.pos[1]-30
+                            text: "Time/Date"
                             color: 255,255,255
                             center_y: self.center_y
         TPI:

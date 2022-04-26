@@ -86,7 +86,7 @@ class TabbedPanelApp(App):
         print(name)
         
         kivids = self.root.ids
-        wids = [[kivids.wid1,[50,100]],[kivids.wid2,[175,100]]]
+        wids = [[kivids.Time,[50,100]],[kivids.Song,[175,100]]]
         count+=1
         widx,widy = wid.pos
         print(widx,widy)

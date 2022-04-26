@@ -63,8 +63,11 @@ class Pisection(App):
         if conn==True:
             message = s.recv(1024).decode()
             print (message)
-            if message.split("-")[0] == 1:
-                self.root.ids.tleft.text = message.split("-")[1]
+            message = message.split("-")
+            prefix = message[0]
+            content = message[1]
+            if prefix == 1:
+                self.root.ids.tleft.text = content
                 
 
         ball = self.root.ids.ball
