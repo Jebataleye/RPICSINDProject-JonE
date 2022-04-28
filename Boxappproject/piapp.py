@@ -15,7 +15,7 @@ port = 12345
 # this makes the server listen to requests
 # coming from other computers on the network
 
-conn = True
+conn = False
 if conn == True: 
     s.connect(('127.0.0.1', port))
 
@@ -40,7 +40,7 @@ from kivy.core.window import Window
 from kivy.clock import Clock
 
 Window.size = (800, 480)
-Window.borderless = True
+Window.borderless = False
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 Config.set('graphics', 'width', '200')
 Config.set('graphics', 'height', '200')
@@ -59,15 +59,17 @@ class ScatterWid(Widget):
 count = 0
 ballvel = [1,1]
 class Pisection(App):
+    #def Timewid(self,box):
     def ball_move(self, dt):
         if conn==True:
             message = s.recv(1024).decode()
-            print (message)
             message = message.split("-")
-            prefix = message[0]
-            content = message[1]
-            if prefix == 1:
-                self.root.ids.tleft.text = content
+            print (message)
+            box = None
+            if message[0] == 1:
+                box = self.root.ids.tleft
+            if message[1] == "Time":
+                print("move created time widget to proper location")
                 
 
         ball = self.root.ids.ball

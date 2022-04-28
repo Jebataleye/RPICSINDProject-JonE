@@ -62,9 +62,11 @@
     
     BoxLayout:
         FloatLayout:
+            
                     
+
             Label:
-                id: "tleft"
+                id: tleft
                 text: 
                 size: 175,125
                 pos: 150,200
@@ -75,7 +77,7 @@
                         pos: 10,470-120
                         size: 250,120
             Label:
-                id: "tright"
+                id: tright
                 size: 175,125
                 pos: 150,200
                 canvas:
@@ -86,7 +88,7 @@
                         size: 250,120
 
             Label:
-                id: "bleft"
+                id: bleft
                 size: 175,125
                 pos: 10,10
                 canvas:
@@ -96,7 +98,7 @@
                         pos: 10,10
                         size: 250,120
             Label:
-                id: "bright"
+                id: bright
                 size: 175,125
                 pos: 790-125,10
                 canvas:
@@ -106,7 +108,7 @@
                         pos: 790-250,10
                         size: 250,120
             Label:
-                id: "center"
+                id: center
                 size: 350,200
                 pos: 150,200
                 canvas:
@@ -115,6 +117,13 @@
                     Rectangle:
                         pos: 400-175,240-100
                         size: 350,200
+            Widget:
+                id: timewidtleft
+                pos: 150,200
+                Label:
+                    text: "12:00"
+                    color: 0,0,0
+                    font_size: 30
             Label:
                 id: ball
                 pos: 0,0
