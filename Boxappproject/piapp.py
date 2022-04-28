@@ -71,7 +71,7 @@ class Pisection(App):
             if message[1] == "Time":
                 print("move created time widget to proper location")
                 
-
+        self.root.ids.timewidtleft.pos[0]+=10
         ball = self.root.ids.ball
         if ball.pos[0]>800 or ball.pos[0] == 800 or ball.pos[0] < 0:
             ballvel[0] *= -1
