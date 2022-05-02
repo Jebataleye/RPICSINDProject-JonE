@@ -7,6 +7,19 @@
             source: "sfy2.png"
             size: 40,38
             pos: self.pos[0]+32,self.pos[1]+2
+<Timewid@Label>:
+    id: timewid
+    pos: 150,200
+    Label:
+        id: tpos
+        pos: self.pos
+    Label:
+        id: timewid2
+        pos: tpos.pos[0]+100,tpos.pos[1]+100
+        text: "12:01"
+        color: 0,0,0
+        font_size: 30
+        font_name: "Roboto-Bold"
 
 <Scatterwid>:
     canvas:
@@ -110,23 +123,18 @@
             Label:
                 id: center
                 size: 350,200
-                pos: 150,200
+                pos: 50,200
                 canvas:
                     Color:
                         rgb: 237/255, 246/255, 249/255
                     Rectangle:
                         pos: 400-175,240-100
                         size: 350,200
-            Widget:
-                id: timewidtleft
-                pos: 150,200
-                size: 250,120
-                Label:
-                    pos: self.pos
-                    text: "12:00"
-                    color: 0,0,0
-                    font_size: 30
-                    font_name: "Roboto-Bold"
+            
+            Timewid:
+                id: timewid
+                pos:150,100    
+                
             Label:
                 id: ball
                 pos: 0,0
