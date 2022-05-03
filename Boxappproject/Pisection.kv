@@ -10,14 +10,16 @@
 <Timewid@Label>:
     id: timewid
     pos: 150,200
+    color: 1,1,1
     Label:
         id: tpos
         pos: self.pos
     Label:
         id: timewid2
-        pos: tpos.pos[0]+100,tpos.pos[1]+100
+        center_x: tpos.pos[0]+135
+        center_y: tpos.pos[1]+100
         text: "12:01"
-        color: 0,0,0
+        color: 1,1,1
         font_size: 30
         font_name: "Roboto-Bold"
 
@@ -68,7 +70,7 @@
 <Test>:
     canvas:
         Color:
-            rgb: 226/255, 149/255, 120/255
+            rgb: 0,0,0
         Rectangle:
             pos: 0,0
             size:self.size
@@ -79,49 +81,92 @@
                     
 
             Label:
+                id: tleftoutline
+                text: 
+                size: 175,130
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 237/255, 246/255, 249/255
+                    Rectangle:
+                        pos: 10,470-125
+                        size: 260,130
+
+            Label:
                 id: tleft
                 text: 
                 size: 175,125
                 pos: 150,200
                 canvas:
                     Color:
-                        rgb: 237/255, 246/255, 249/255
+                        rgb: 0,0,0
                     Rectangle:
-                        pos: 10,470-120
+                        pos: 15,470-120
                         size: 250,120
             Label:
-                id: tright
+                id: trightoutline
                 size: 175,125
                 pos: 150,200
                 canvas:
                     Color:
                         rgb: 237/255, 246/255, 249/255
                     Rectangle:
-                        pos: 790-259,470-120
-                        size: 250,120
-
+                        pos: 790-255,470-125
+                        size: 260,130
             Label:
-                id: bleft
+                id: tright
+                size: 175,125
+                pos: 150,200
+                canvas:
+                    Color:
+                        rgb: 0,0,0
+                    Rectangle:
+                        pos: 790-250,470-120
+                        size: 250,120
+            Label:
+                id: bleftoutline
                 size: 175,125
                 pos: 10,10
                 canvas:
                     Color:
                         rgb: 237/255, 246/255, 249/255
                     Rectangle:
-                        pos: 10,10
+                        pos: 10,5
+                        size: 260,130
+            
+            Label:
+                id: bleft
+                size: 175,125
+                pos: 10,10
+                canvas:
+                    Color:
+                        rgb: 0,0,0
+                    Rectangle:
+                        pos: 15,10
                         size: 250,120
             Label:
-                id: bright
+                id: brightoutline
                 size: 175,125
                 pos: 790-125,10
                 canvas:
                     Color:
                         rgb: 237/255, 246/255, 249/255
                     Rectangle:
+                        pos: 790-255,5
+                        size: 260,130
+            
+            Label:
+                id: bright
+                size: 175,125
+                pos: 790-125,10
+                canvas:
+                    Color:
+                        rgb: 0,0,0
+                    Rectangle:
                         pos: 790-250,10
                         size: 250,120
             Label:
-                id: center
+                id: centeroutline
                 size: 350,200
                 pos: 50,200
                 canvas:
@@ -130,6 +175,17 @@
                     Rectangle:
                         pos: 400-175,240-100
                         size: 350,200
+
+            Label:
+                id: center
+                size: 350,200
+                pos: 50,200
+                canvas:
+                    Color:
+                        rgb: 0,0,0
+                    Rectangle:
+                        pos: 400-170,240-95
+                        size: 340,190                        
             
             Timewid:
                 id: timewid

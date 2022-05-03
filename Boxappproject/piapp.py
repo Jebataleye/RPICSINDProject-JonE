@@ -1,6 +1,7 @@
 # first of all import the socket library
 import socket            
- 
+from datetime import datetime
+now = datetime.now()
 # next create a socket object
 s = socket.socket()        
 print ("Socket successfully created")
@@ -14,6 +15,7 @@ port = 12345
 # instead we have inputted an empty string
 # this makes the server listen to requests
 # coming from other computers on the network
+time = True
 
 conn = False
 if conn == True: 
@@ -71,7 +73,8 @@ class Pisection(App):
             if message[1] == "Time":
                 print("move created time widget to proper location")
                 
-        self.root.ids.timewid.pos[0]+=0
+        if time == True:
+            self.root.ids.timewid.text = now.strftime("%H:%M:%S")
         ball = self.root.ids.ball
         if ball.pos[0]>800 or ball.pos[0] == 800 or ball.pos[0] < 0:
             ballvel[0] *= -1
