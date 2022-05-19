@@ -8,9 +8,11 @@
             size: 40,38
             pos: self.pos[0]+32,self.pos[1]+2
 <Timewid@Label>:
+
     id: timewid
     pos: 150,200
-    color: 1,1,1
+    color: .5,1,1
+    timeslot: timewid2
     Label:
         id: tpos
         pos: self.pos
@@ -77,7 +79,7 @@
     
     BoxLayout:
         FloatLayout:
-            
+            id: mainlayout
                     
 
             Label:
@@ -197,7 +199,8 @@
                     text: "testing2"
             Timewid:
                 id: timewid
-                pos:150,100    
+                pos:150,100
+                    
                 
             Label:
                 id: ball

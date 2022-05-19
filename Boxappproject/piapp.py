@@ -1,6 +1,9 @@
 # first of all import the socket library
+from cProfile import label
 import socket            
 from datetime import datetime
+
+from pip import main
 now = datetime.now()
 # next create a socket object
 s = socket.socket()        
@@ -61,7 +64,11 @@ class ScatterWid(Widget):
 count = 0
 ballvel = [1,1]
 class Pisection(App):
-    #def Timewid(self,box):
+    def Timewid(self,box):
+        mainlayout = self.root.ids.mainlayout
+        timelabel = Label(pos=(500,120),text = "hello",color=(255,255,255))
+        mainlayout.add_widget(timelabel)
+        print("done")
     def ball_move(self, dt):
         if conn==True:
             message = s.recv(1024).decode()
@@ -75,9 +82,15 @@ class Pisection(App):
                 
         if time == True:
             now = datetime.now()
+<<<<<<< HEAD
             timechildren = [child for child in self.root.ids.timewid.children]
             print(timechildren,"1",timechildren[0].text)
             timechildren[0].text = now.strftime("%I:%M %p")
+=======
+            
+            global timeslot
+            self.root.ids.timewid = now.strftime("%H:%M:%S")
+>>>>>>> 5a2a60d888a429a026d60d6bae11b608c9b89ccf
         ball = self.root.ids.ball
         if ball.pos[0]>800 or ball.pos[0] == 800 or ball.pos[0] < 0:
             ballvel[0] *= -1
@@ -103,6 +116,7 @@ class Pisection(App):
     #Use init to run stuff on startup
     def build(self):
         Clock.schedule_interval(self.ball_move,1)
+        Clock.schedule_once(self.Timewid,3)
         print("x"*100)
         return Test()
 Pisection().run()
